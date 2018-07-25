@@ -9,9 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverSingleton {
 	private static WebDriver driver;
-    private static final Logger logger = LogManager.getRootLogger();
-    private static final String WEBDRIVER_CHROME_DRIVER = "webdriver.gecko.driver";
-    private static final String CHROMEDRIVER_CHROMEDRIVER_EXE_PATH = ".\\geckodriver\\geckodriver.exe";
+    private static final String WEBDRIVER_CHROME_DRIVER = "webdriver.chrome.driver";
+    private static final String CHROMEDRIVER_CHROMEDRIVER_EXE_PATH = "C:/Program Files/Drivers/chromedriver.exe";
 
     private DriverSingleton(){};
 
@@ -23,7 +22,6 @@ public class DriverSingleton {
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
-            logger.info("Browser started");
         }
 
         return driver;
