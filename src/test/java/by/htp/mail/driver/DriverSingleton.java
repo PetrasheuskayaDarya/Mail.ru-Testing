@@ -5,6 +5,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverSingleton {
@@ -18,7 +19,7 @@ public class DriverSingleton {
     public static WebDriver getDriver(){
         if (null == driver){
             System.setProperty(WEBDRIVER_CHROME_DRIVER, CHROMEDRIVER_CHROMEDRIVER_EXE_PATH);
-            driver = new FirefoxDriver();
+            driver = new ChromeDriver();
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();

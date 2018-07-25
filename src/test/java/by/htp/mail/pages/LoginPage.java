@@ -37,9 +37,9 @@ public class LoginPage extends AbstractPage {
 		buttonSubmit.click();
 	}
 
-	public void checkTitleMainPage() {
-		String mainPageTitle = mainPage.getTitle();
+//	public void checkTitleMainPage() {
+//		String mainPageTitle = mainPage.getTitle();
 		
-	}
+	//}
 
 }
