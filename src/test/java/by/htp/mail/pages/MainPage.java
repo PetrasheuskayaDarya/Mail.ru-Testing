@@ -10,6 +10,9 @@ public class MainPage extends AbstractPage {
 
 	@FindBy(css = "a[rel='history'] span[class^='b-toolbar__btn']")
 	private WebElement buttonWriteEmail;
+	
+	@FindBy(xpath = ".//*[@id='b-nav_folders']/div/div[2]/a/span")
+	private WebElement emailsThatWasSentButton;
 
 	public MainPage(WebDriver driver) {
 		super(driver);
@@ -24,4 +27,9 @@ public class MainPage extends AbstractPage {
 	public void openPage() {
 		driver.navigate().to(BASE_URL);
 	}
+
+	public WebElement getEmailsThatWasSentButton() {
+		return emailsThatWasSentButton;
+	}
+
 }
