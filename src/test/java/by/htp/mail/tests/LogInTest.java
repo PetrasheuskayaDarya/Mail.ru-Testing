@@ -15,22 +15,19 @@ public class LogInTest {
 	private final String PASSWORD = "Klopik123";
 
 	@BeforeMethod(description = "Init browser")
-	public void setUp()
-	{
+	public void setUp(){
 		steps = new Steps();
 		steps.initBrowser();
 	}
 
 	@Test
-	public void LoginToMailRu()
-	{
+	public void LoginToMailRu() {
 		steps.loginMailPage(USERNAME, PASSWORD);
-	
+		Assert.assertTrue(steps.isLoggedIn("tathtp@mail.ru"));
 	}
 
 	@AfterMethod(description = "Stop Browser")
-	public void stopBrowser()
-	{
+	public void stopBrowser(){
 		steps.closeDriver();
 	}
 
