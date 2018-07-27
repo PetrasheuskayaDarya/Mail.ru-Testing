@@ -11,12 +11,6 @@ public class MainPage extends AbstractPage {
 	@FindBy(css = "a[rel='history'] span[class^='b-toolbar__btn']")
 	private WebElement buttonWriteEmail;
 
-	@FindBy(xpath = "//child::textarea[attribute::data-original-name='To']")
-	private WebElement emailField;
-
-	@FindBy(css = "input[tabindex='7']")
-	private WebElement subject;
-
 	public MainPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
@@ -25,9 +19,6 @@ public class MainPage extends AbstractPage {
 	public void ClickOnCreateNewLetter() {
 		buttonWriteEmail.click();
 	}
-//	public String getTitle() {
-//		
-//	}
 
 	@Override
 	public void openPage() {

@@ -21,7 +21,7 @@ public class LoginPage extends AbstractPage {
 
 	@FindBy(xpath = "//iframe[@class='ag-popup__frame__layout__iframe']")
 	private WebElement iframeOnLoginPage;
-	
+
 	@FindBy(xpath = "//span[@id='PH_authMenu_button']/i[@id='PH_user-email']")
 	private WebElement LoggedInUserName;
 
