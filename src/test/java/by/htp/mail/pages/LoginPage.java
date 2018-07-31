@@ -13,11 +13,14 @@ public class LoginPage extends AbstractPage {
 	@FindBy(xpath = "//input[@name='Login']")
 	private WebElement inputLogin;
 
-	@FindBy(xpath = "//input[@name='Password']")
+	@FindBy(xpath = "//input[@type='password']")
 	private WebElement inputPassword;
 
 	@FindBy(xpath = "//button[@type='submit']")
-	private WebElement buttonSubmit;
+	private WebElement buttonSubmit;	
+	
+	@FindBy(xpath = "//button[@data-test-id='next-button']")
+	private WebElement nextButton;
 
 	@FindBy(xpath = "//iframe[@class='ag-popup__frame__layout__iframe']")
 	private WebElement iframeOnLoginPage;
@@ -38,8 +41,10 @@ public class LoginPage extends AbstractPage {
 	public void login(String username, String password) {
 		driver.switchTo().frame(iframeOnLoginPage);
 		inputLogin.sendKeys(username);
+		nextButton.click();
 		inputPassword.sendKeys(password);
-		buttonSubmit.click();
+		nextButton.click();
+		//buttonSubmit.click();
 	}
 
 	public String getTextUserName() {

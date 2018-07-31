@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SimpleSuite">
+	<test name="SimpleTest">
+		<groups>
+			<run>
+				<include name="login"></include>
+			</run>
+		</groups>
+
+		<classes>
+			<class name="by.htp.mail.tests.LogInTest"></class>
+			<class name="by.htp.mail.tests.TheLetterIsSent"></class>
+		</classes>
+	</test>
+</suite>
+
+<plugins>
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.22.0</version>
+		<configuration>
+			<suiteXmlFiles>
+				<suiteXmlFile>Simple-sute.xml</suiteXmlFile>
+			</suiteXmlFiles>
+		</configuration>
+	</plugin>
+</plugins>

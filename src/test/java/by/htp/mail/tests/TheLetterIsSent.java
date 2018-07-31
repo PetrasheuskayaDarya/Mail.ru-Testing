@@ -22,7 +22,7 @@ public class TheLetterIsSent {
 		steps.initBrowser();
 	}
 
-	@Test
+	@Test(groups = {"login"})
 	public void LetterIsSent() throws InterruptedException {
 		steps.loginMailPage(USERNAME, PASSWORD);
 		steps.sentNewLetter();

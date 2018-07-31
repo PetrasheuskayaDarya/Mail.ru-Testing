@@ -56,7 +56,6 @@ public class Steps {
 	
 	public boolean GetTitleOfMyEmail() {
 		SentMailPage sentMailPage = new SentMailPage(driver);
-		 //List<WebElement> listOfAllEmail = driver.findElements(By.xpath("//div[@class = 'b-datalist__body']/div"));
 		 List<WebElement> listOfAllEmail = driver.findElements(By.xpath("//div[@class='b-datalist__item__body']/a"));
 		 String element;
 			for (int i = 0; i < listOfAllEmail.size(); i++) {

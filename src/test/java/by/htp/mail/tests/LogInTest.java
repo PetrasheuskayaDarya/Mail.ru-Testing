@@ -20,7 +20,7 @@ public class LogInTest {
 		steps.initBrowser();
 	}
 
-	@Test
+	@Test(groups = {"login"})
 	public void LoginToMailRu() {
 		steps.loginMailPage(USERNAME, PASSWORD);
 		Assert.assertTrue(steps.isLoggedIn("tathtp@mail.ru"));
