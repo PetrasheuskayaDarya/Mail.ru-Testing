@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import by.htp.mail.pages.SendMailPage;
 import by.htp.mail.steps.Steps;
 
-public class TheLetterIsSent {
+public class TheLetterIsSentTest {
 	private Steps steps;
 	private final String USERNAME = "tathtp";
 	private final String PASSWORD = "Klopik123";
