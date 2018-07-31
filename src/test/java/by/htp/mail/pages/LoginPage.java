@@ -41,10 +41,10 @@ public class LoginPage extends AbstractPage {
 	public void login(String username, String password) {
 		driver.switchTo().frame(iframeOnLoginPage);
 		inputLogin.sendKeys(username);
-		nextButton.click();
+		//nextButton.click();
 		inputPassword.sendKeys(password);
-		nextButton.click();
-		//buttonSubmit.click();
+		//nextButton.click();
+		buttonSubmit.click();
 	}
 
 	public String getTextUserName() {
