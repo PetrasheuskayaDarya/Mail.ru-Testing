@@ -16,13 +16,13 @@ public class TheLetterIsSentTest {
 	private final String topic = "DaryaTest4";
 	private final String text = "TestMessage";
 
-	@BeforeMethod(description = "Init browser")
+	@BeforeMethod(description = "Init browser", groups = {"login1"})
 	public void setUp() {
 		steps = new Steps();
 		steps.initBrowser();
 	}
 
-	@Test(groups = {"login"})
+	@Test(groups = {"login1"})
 	public void LetterIsSent() throws InterruptedException {
 		steps.loginMailPage(USERNAME, PASSWORD);
 		steps.sentNewLetter();

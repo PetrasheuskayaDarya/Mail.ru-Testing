@@ -4,6 +4,15 @@
 
 
 <suite name="SimpleSuite">
+
+	<listeners>
+		<listener
+			class-name="by.htp.mail.listener.TestFailCustomListener" />
+	</listeners>
+	
+	
+
+
 	<test name="SimpleTest">
 		<groups>
 			<run>
