@@ -16,7 +16,6 @@ import by.htp.mail.driver.DriverSingleton;
 
 public class TestFailCustomListener implements ITestListener {
 
-	int count;
 
 	@Override
 	public void onFinish(ITestContext arg0) {
@@ -40,7 +39,10 @@ public class TestFailCustomListener implements ITestListener {
 	public void onTestFailure(ITestResult arg0) {
 		System.out.println("!!!!!! onTestFailure");
 		Reporter.log("!!!!!!!!!!!!!  onTestFailure");
-		takeScreenshot();
+		
+		String filePath = takeScreenshot();
+		Reporter.log("<img src= \"" + filePath +"\">");
+		
 	}
 
 	@Override
@@ -61,13 +63,12 @@ public class TestFailCustomListener implements ITestListener {
 		Reporter.log("!!!!!!!!!!!!!  onTestSuccess");
 	}
 
-	private void takeScreenshot() {
-		count++;
-		String filePath = "C://Users/37533/Desktop/logsScreenShot/screenShot";
+	private String takeScreenshot() {
+		long time = System.currentTimeMillis();
+		String filePath = ".//test-output/screenshot/screenshot";
+		String fileViewPath = "screenshot/screenshot";
 		String fileExt = ".png";
-		String fileName = filePath + count + fileExt;
-
-		Reporter.log("<img src= \"" + fileName +"\">");
+		String fileName = filePath + time + fileExt;
 
 		WebDriver driver = DriverSingleton.getDriver();
 		File screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -78,6 +79,7 @@ public class TestFailCustomListener implements ITestListener {
 		} catch (IOException e) {
 			System.out.println("Faled to save screenshot: " + e.getLocalizedMessage());
 		}
+		return fileViewPath +time +fileExt;
 	}
 
 }
